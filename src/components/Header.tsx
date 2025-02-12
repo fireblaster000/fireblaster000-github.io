@@ -33,7 +33,7 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  }, [navItems])
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
