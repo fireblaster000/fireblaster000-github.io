@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -8,14 +8,22 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
 
-  const navItems = [
+  // const navItems = [
+  //   { name: "About", href: "#about" },
+  //   { name: "Education", href: "#education" },
+  //   { name: "Research", href: "#research" },
+  //   { name: "Projects", href: "#projects" },
+  //   { name: "Leadership", href: "#leadership" },
+  //   { name: "Skills", href: "#skills" },
+  // ]
+  const navItems = useMemo(() => [
     { name: "About", href: "#about" },
     { name: "Education", href: "#education" },
     { name: "Research", href: "#research" },
     { name: "Projects", href: "#projects" },
     { name: "Leadership", href: "#leadership" },
     { name: "Skills", href: "#skills" },
-  ]
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {

@@ -14,12 +14,14 @@ const Hero = () => {
   useEffect(() => {
     if (!mountRef.current) return
 
+    const mountElement = mountRef.current;
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
 
     renderer.setSize(window.innerWidth, window.innerHeight)
-    mountRef.current.appendChild(renderer.domElement)
+    mountElement.appendChild(renderer.domElement)
 
     const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16)
     const material = new THREE.MeshPhongMaterial({
@@ -87,7 +89,7 @@ const Hero = () => {
 
     return () => {
       window.removeEventListener("resize", handleResize)
-      mountRef.current?.removeChild(renderer.domElement)
+      mountElement?.removeChild(renderer.domElement)
     }
   }, [])
 
