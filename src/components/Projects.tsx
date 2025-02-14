@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
+// import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"
 
 const Projects = () => {
   const projects = [
@@ -112,7 +112,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="flex space-x-4">
-                {project.github && (
+                {/* {project.github && (
                   <a
                     href={project.github}
                     target="_blank"
@@ -121,8 +121,8 @@ const Projects = () => {
                   >
                     <FaGithub className="mr-2" /> GitHub
                   </a>
-                )}
-                {project.live && (
+                )} */}
+                {/* {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
@@ -131,7 +131,7 @@ const Projects = () => {
                   >
                     <FaExternalLinkAlt className="mr-2" /> Live Demo
                   </a>
-                )}
+                )} */}
               </div>
             </motion.div>
           ))}

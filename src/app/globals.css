@@ -84,40 +84,49 @@ html {
   }
 }
 
-/* Fancy hover effects */
-.hover-underline-animation {
-  position: relative;
-  display: inline-block;
+/* 3D Shape Animation */
+.shape-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  perspective: 1000px;
 }
 
-.hover-underline-animation::after {
+.shape {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+}
+
+.shape::before,
+.shape::after {
   content: "";
   position: absolute;
   width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #3b82f6;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
+  height: 100%;
+  background: rgba(59, 130, 246, 0.1);
+  border: 2px solid rgba(59, 130, 246, 0.5);
+  border-radius: 50%;
 }
 
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+.shape::before {
+  transform: rotateX(90deg);
 }
 
-/* Glassmorphism effect */
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+.shape::after {
+  transform: rotateY(90deg);
 }
 
-/* Fancy box shadow */
-.fancy-shadow {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+@keyframes rotate {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
 }
 
