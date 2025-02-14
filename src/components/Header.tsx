@@ -8,14 +8,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("")
 
-  // const navItems = [
-  //   { name: "About", href: "#about" },
-  //   { name: "Education", href: "#education" },
-  //   { name: "Research", href: "#research" },
-  //   { name: "Projects", href: "#projects" },
-  //   { name: "Leadership", href: "#leadership" },
-  //   { name: "Skills", href: "#skills" },
-  // ]
   const navItems = useMemo(() => [
     { name: "About", href: "#about" },
     { name: "Education", href: "#education" },
